@@ -1,0 +1,31 @@
+======================================================================
+PROJECT SPECIFICATION: AWS-INTEGRATED VPS RENTAL PLATFORM
+======================================================================
+Target Deadline: Before July 10
+Backend Technology: Java, Spring Boot, Spring Security, AWS SDK for Java v2
+Frontend Technology: HTML5, CSS3, Modern JavaScript (ES6+, Fetch API)
+Database: Amazon RDS (MySQL/PostgreSQL)
+
+AWS SERVICES TO IMPLEMENT:
+1. Amazon Cognito: User Registration, Secure Login, Google OAuth2 integration.
+2. Amazon EC2: Representing rented VPS units. Controls: Start, Stop, Reboot.
+3. Amazon RDS: Storing Users, Wallet Balance, Transactions, and EC2 Metadata.
+4. Amazon S3: Storing User Avatars and PDF Invoices.
+5. AWS Lambda: Daily cron job scanning RDS for expiring VPS instances.
+6. Amazon SNS: Triggered by Lambda to send expiration warning Emails to users.
+
+INSTRUCTIONS FOR CODE GENERATION:
+You must read this file carefully and act as a Senior Cloud Architect. 
+Generate production-ready, clean, and well-commented code. 
+Do not use pseudo-code or empty placeholders for AWS SDK logic.
+
+Please structured your output step-by-step:
+- PART 1: Project Folder Structure (Backend & Frontend)
+- PART 2: Spring Boot Configuration (pom.xml dependencies, application.properties, AWS Client Config)
+- PART 3: Database Entities & Repositories (User, VpsInstance, Transaction)
+- PART 4: Backend REST Controllers & Services (Cognito Auth, EC2 Control, S3 Upload)
+- PART 5: AWS Lambda Function Logic (Scheduled handler calling SNS)
+- PART 6: Frontend Interface (HTML/CSS Dashboard, JS Fetch integration with Backend APIs)
+
+Let me know when you are ready to process Part 1.
+======================================================================

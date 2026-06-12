@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS VPS Rental Platform - Secure Auth</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="alert-banner"></div>
+
+    <div class="auth-container">
+        <!-- 1. LOGIN CARD -->
+        <div class="auth-card" id="login-card">
+            <div class="auth-header">
+                <h1>AWS VPS Rental</h1>
+                <p>Sign in to manage your cloud virtual servers</p>
+            </div>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-username">Username</label>
+                    <input type="text" id="login-username" class="form-control" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" class="form-control" placeholder="••••••••" required>
+                </div>
+                
+                <button type="submit" class="btn">Login Securely</button>
+            </form>
+            
+            <div class="auth-switch">
+                Don't have an account? <a href="#" id="to-register">Register here</a>
+            </div>
+        </div>
+
+        <!-- 2. REGISTER CARD (Hidden by default) -->
+        <div class="auth-card" id="register-card" style="display: none;">
+            <div class="auth-header">
+                <h1>Create Account</h1>
+                <p>Register to rent and configure high-speed EC2 VPS</p>
+            </div>
+
+            <form id="register-form">
+                <div class="form-group">
+                    <label for="register-username">Username</label>
+                    <input type="text" id="register-username" class="form-control" placeholder="Choose username" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email Address</label>
+                    <input type="email" id="register-email" class="form-control" placeholder="name@domain.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Password</label>
+                    <input type="password" id="register-password" class="form-control" placeholder="Min 6 characters" required>
+                </div>
+
+                <button type="submit" class="btn">Start Free Sign Up</button>
+            </form>
+
+            <div class="auth-switch">
+                Already verified? <a href="#" id="to-login">Login here</a>
+            </div>
+        </div>
+
+        <!-- 3. VERIFY CODE CARD (Hidden by default) -->
+        <div class="auth-card" id="verify-card" style="display: none;">
+            <div class="auth-header">
+                <h1>Verify Account</h1>
+                <p>Enter the confirmation code sent to your email</p>
+            </div>
+
+            <form id="verify-form">
+                <div class="form-group">
+                    <label for="verify-username">Username</label>
+                    <input type="text" id="verify-username" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="verify-code">Verification Code</label>
+                    <input type="text" id="verify-code" class="form-control" placeholder="Enter 6-digit code" required>
+                </div>
+
+                <button type="submit" class="btn">Confirm Account</button>
+            </form>
+
+            <div class="auth-switch">
+                Back to <a href="#" id="verify-to-login">Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

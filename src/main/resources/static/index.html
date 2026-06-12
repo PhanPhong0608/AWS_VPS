@@ -8,6 +8,14 @@
 </head>
 <body>
 
+    <div class="mode-panel">
+        <div class="mode-info">
+            <span>Environment Mode:</span>
+            <span id="current-mode-badge" class="mode-badge mode-badge-mock">🔮 Demo Mode (Offline)</span>
+        </div>
+        <button id="toggle-mode-btn" class="mode-btn-toggle">Switch to Live Backend</button>
+    </div>
+
     <div id="alert-banner"></div>
 
     <div class="auth-container">
@@ -84,6 +92,11 @@
 
                 <button type="submit" class="btn">Confirm Account</button>
             </form>
+
+            <div class="demo-helper" id="demo-verify-helper">
+                <strong>💡 Demo Mode Active</strong>
+                <span>Verification code is always <strong>123456</strong></span>
+            </div>
 
             <div class="auth-switch">
                 Back to <a href="#" id="verify-to-login">Login</a>

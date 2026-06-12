@@ -359,7 +359,8 @@ body {
 
 .vps-actions {
     display: flex;
-    gap: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .vps-actions button {
@@ -425,3 +426,132 @@ body {
     color: var(--danger);
     font-weight: 700;
 }
+
+/* Mode Indicator Panel */
+.mode-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 24px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-main);
+    z-index: 1000;
+    position: relative;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+}
+
+.mode-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mode-badge {
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.mode-badge-mock {
+    background: rgba(168, 85, 247, 0.2);
+    color: #c084fc;
+    border: 1px solid rgba(168, 85, 247, 0.4);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.25);
+    animation: glow-purple 2s infinite alternate;
+}
+
+.mode-badge-live {
+    background: rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    border: 1px solid rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.25);
+    animation: glow-blue 2s infinite alternate;
+}
+
+.mode-btn-toggle {
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: var(--text-main);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    width: auto;
+    margin: 0;
+}
+
+.mode-btn-toggle:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+}
+
+/* Pulsing effects for transitions */
+@keyframes glow-purple {
+    from { box-shadow: 0 0 5px rgba(168, 85, 247, 0.2); }
+    to { box-shadow: 0 0 15px rgba(168, 85, 247, 0.5); }
+}
+
+@keyframes glow-blue {
+    from { box-shadow: 0 0 5px rgba(59, 130, 246, 0.2); }
+    to { box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
+}
+
+@keyframes pulse-warning {
+    0% { opacity: 0.6; box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+    70% { opacity: 1; box-shadow: 0 0 0 6px rgba(245, 158, 11, 0); }
+    100% { opacity: 0.6; box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
+}
+
+.status-pending, .status-rebooting, .status-stopping {
+    animation: pulse-warning 1.8s infinite ease-in-out;
+}
+
+/* Extra premium styling */
+.panel-card {
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    background: rgba(15, 23, 42, 0.45);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.btn:hover {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(168, 85, 247, 0.2);
+}
+
+.vps-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Tooltip or instruction helper for verification */
+.demo-helper {
+    background: rgba(168, 85, 247, 0.1);
+    border: 1px dashed rgba(168, 85, 247, 0.3);
+    padding: 12px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-size: 0.85rem;
+    color: #d8b4fe;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.demo-helper strong {
+    color: #f3e8ff;
+}
+
